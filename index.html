@@ -703,9 +703,8 @@ function render() {
   else                  num.style.color = '#7BA8CC'; // azul acero
 
   // Récord
-  if (days > record) { record = days; saveState(); }
-  document.getElementById('record-val').textContent =
-    record > 0 ? record + ' días' : '—';
+  if (days > record) { record = 1321; }
+
 
   // Fecha último accidente
   document.getElementById('last-date').textContent =
