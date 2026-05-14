@@ -666,7 +666,7 @@ function loadState() {
     if (d) startDate = new Date(d);
     else    { startDate = new Date(); startDate.setHours(0,0,0,0); saveState(); }
     meta   = parseInt(localStorage.getItem(KEY_META))   || 365;
-    record = parseInt(localStorage.getItem(KEY_RECORD)) || 0;
+    record = 1586;
   } catch(e) {
     startDate = new Date();
     startDate.setHours(0,0,0,0);
