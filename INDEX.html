@@ -658,7 +658,7 @@ const KEY_RECORD = 'aza_record';
 
 let startDate = null;
 let meta = 365;
-let record = 1580;
+let record = 1570;
 
 function loadState() {
   try {
@@ -666,7 +666,7 @@ function loadState() {
     if (d) startDate = new Date(d);
     else    { startDate = new Date(); startDate.setHours(0,0,0,0); saveState(); }
     meta   = parseInt(localStorage.getItem(KEY_META))   || 365;
-    record = 1586;
+    record = 1580;
   } catch(e) {
     startDate = new Date();
     startDate.setHours(0,0,0,0);
@@ -706,7 +706,8 @@ function render() {
   //if (days > record) { record = days; saveState(); }
   //document.getElementById('record-val').textContent =
    // record > 0 ? record + ' días' : '—';
-
+document.getElementById('record-val').textContent =
+  record + ' días';
   // Fecha último accidente
   document.getElementById('last-date').textContent =
     startDate.toLocaleDateString('es-CL', { day:'2-digit', month:'short', year:'numeric' });
@@ -770,7 +771,7 @@ function resetear() {
   if (!confirm('¿Confirmas que ocurrió un accidente hoy y quieres reiniciar el contador?')) return;
   startDate = new Date();
   startDate.setHours(0,0,0,0);
-  record = 0;
+  record = 1580;
   saveState();
   render();
   closeModal();
